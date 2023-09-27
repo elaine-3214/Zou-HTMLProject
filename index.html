@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Static Website</title>
+    <style>
+        body {font-family:'Courier New', Courier, monospace;}
+        /* Style the tab */
+        .tab {
+            overflow: hidden;
+            border: 1px solid #D3E5CF;
+            background-color: #D3E5CF;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #9ccee2;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #9ccee2;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  background-color: #9ccee2;
+  border-top: none;
+}
+    </style>
+</head>
+<body>
+<!-- Tab links -->
+<div class="tab">
+    <button class="tablinks" onclick="openPage(event, 'Main Page')" id="defaultOpen">Main Page</button>
+    <button class="tablinks" onclick="openPage(event, 'Favorites')">Favorites</button>
+    <button class="tablinks" onclick="openPage(event, 'Skills')">Skills</button>
+    <button class="tablinks" onclick="openPage(event, 'Spots')">Spots</button>
+  </div>
+  
+  <!-- Tab content -->
+  <div id="Main Page" class="tabcontent">
+    <!--This is the main page of my website-->
+    <h1>Elaine</h1>
+    <audio controls src="name.mp3"></audio>
+    <p><strong>Fun Facts: </strong> I live in Queens, I can read, write, and understand Chinese, and my favorite color is blue.</p>
+    <p>Here is a video of a night sky</p>
+    <video controls src="night.mp4" height="300" width="350"></video>
+    <br>
+    <p>If you would like to open tabs in a new page:</p>
+    <a href="favorites.html" target=_blank title="This takes you to favorites page">
+      Go to favorites page
+    </a>
+    <br>
+    <a href="skills.html" target=_blank title="This takes you to skills page">
+        Go to skills page
+    </a>
+    <br>
+    <a href="spots.html" target=_blank title="This takes you to spots page">
+        Go to spots page
+    </a>
+  </div>
+
+  <div id="Favorites" class="tabcontent">
+    <h4>Favorite Food:</h4>
+    <ul> <li>Ice Cream</li> <li>Barbeque</li> <li>Rice</li> <li>Chicken</li></ul>
+    <br>
+    <img src="iceCreamimg.webp" height="200" width="250" >
+    <h4>Favorite Hobbies</h4>
+    <ul> <li>Reading</li> <li>Listening to Music</li> <li>Painting</li> <li>Crocheting</li> <li>Badminton</li></ul>
+    <img src="music.webp" height="200" width="300" >
+    <img src="badminton.webp" height="200" width="300" >
+</div>
+  
+  <div id="Skills" class="tabcontent">
+    <p>If there was one thing I can teach someone else, that would be Chinese. 
+        I started learning ever since I was 7, and I am quite confident in my 
+        ability to speak, read, and understand. I still need to perfect my writing 
+        skills, and that can be done through practicing writing characters every day.</p>
+    <img src="img1.jpg" height="200" width="300">
+    <br>
+    <form>
+      <p>What are some skills you have?</p>
+      <label for="yourSkills">Your Skills:</label>
+      <input type="text" id="yourSkills" name="yourSkills" placeholder="languages, sports, etc">
+      <div>
+        <input type="reset">
+      </div>
+      <div>
+        <input type="submit">
+      </div>
+    </form>
+    
+  </div>
+  
+  <div id="Spots" class="tabcontent">
+    <h3>Favorite NYC Spots</h3>
+    <table bgcolor="FCE9C4">
+        <tr bgcolor="FFA5A1">
+            <th>Place</th>
+            <th>Reason</th>
+        </tr>
+        <tr bgcolor="FFC2A6">
+            <th>Flushing</th>
+            <th>Lots of good <span style="color:slateblue">food</span> to try out and shops to spend your weekend at.</th>
+        </tr>
+        <tr bgcolor="FFC2A6">
+            <th>Fresh Meadow Park</th>
+            <th>Great place for morning walks, as well as a lake with <span style="color:slateblue">swans and turtles.</span></th>
+        </tr>
+        <tr bgcolor="FFC2A6">
+            <th>The Centrale</th>
+            <th>Just visited this place a few weeks back. Great place for <span style="color:slateblue">photos</span>, especially at night.</th>
+        </tr>
+        <tr bgcolor="FFC2A6">
+            <th>Friendship BBQ</th>
+            <th>Chinese bbq at an affordable price, with traditional Chinese <span style="color:slateblue">dessert</span> too.</th>
+        </tr>
+    </table>
+  </div>
+
+
+  <script>
+    document.getElementById("defaultOpen").click();
+function openPage(evt, pageName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(pageName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+  </script>
+    <br>
+    <footer>
+        &copy; Sept. 2023 Elaine Zou
+      </footer>
+</body>
+</html>
